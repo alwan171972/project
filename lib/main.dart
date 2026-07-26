@@ -1,41 +1,71 @@
 import 'package:flutter/material.dart';
 
-void main() => runApp(MyApp());
+void main() {
+  runApp(const Coba());
+}
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-  // This widget is the root of your application.
+class Coba extends StatelessWidget {
+  const Coba({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      // Application name
-      title: 'Flutter Hello World',
-      // Application theme data, you can set the colors for the application as
-      // you want
-      theme: ThemeData(
-        // useMaterial3: false,
-        primarySwatch: Colors.blue,
-      ),
-      // A widget which will be started on application startup
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
-    );
-  }
-}
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        appBar: AppBar(title: const Text("3 Bagian Layar")),
+        body: Column(
+          children: [
+            // Bagian 1 - Atas (Merah)
+            Expanded(
+              child: Container(
+                width: double.infinity, // Memenuhi lebar layar
+                color: Colors.redAccent,
+                child: const Center(
+                  child: Text(
+                    "kata 1",
+                    style: TextStyle(
+                        fontSize: 24,
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold),
+                  ),
+                ),
+              ),
+            ),
 
-class MyHomePage extends StatelessWidget {
-  final String title;
-  const MyHomePage({super.key, required this.title});  
+            // Bagian 2 - Tengah (Hijau)
+            Expanded(
+              child: Container(
+                width: double.infinity, // Memenuhi lebar layar
+                color: Colors.green,
+                child: const Center(
+                  child: Text(
+                    "kata 2",
+                    style: TextStyle(
+                        fontSize: 24,
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold),
+                  ),
+                ),
+              ),
+            ),
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        // The title text which will be shown on the action bar
-        title: Text(title),
-      ),
-      body: Center(
-        child: Text(
-          'Hello, World!',
+            // Bagian 3 - Bawah (Biru)
+            Expanded(
+              child: Container(
+                width: double.infinity, // Memenuhi lebar layar
+                color: Colors.blueAccent,
+                child: const Center(
+                  child: Text(
+                    "kata 3",
+                    style: TextStyle(
+                        fontSize: 24,
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold),
+                  ),
+                ),
+              ),
+            ),
+          ],
         ),
       ),
     );
